@@ -18,6 +18,13 @@ function checkGuess() {
   const guessInput = document.getElementById("guessInput");
   const guessValue = parseInt(guessInput.value);
   const resultContainer = document.getElementById("resultContainer");
+
+  // ฟังก์ชันอัปเดตจํานวนครั้ง
+  function updateDisplay() {
+    const attemptsContainer = document.getElementById("attemptsContainer");
+    attemptsContainer.textContent = `ทายแล้ว: ${attemptCount} ครั้ง`;
+  }
+
   // Validation: ตรวจสอบว่าใส่ตัวเลขหรือไม่
   if (isNaN(guessValue) || guessInput.value === "") {
     resultContainer.innerHTML = `
